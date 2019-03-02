@@ -84,7 +84,7 @@ export const Background = styled.main`
 `
 
 export const Info = styled.div`
-  padding: 5em 0;
+  padding: 3.5em 0;
   width: 70vw;
   text-align: left;
   > h1, h2, h3 {

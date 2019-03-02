@@ -1,5 +1,4 @@
-import React, { PureComponent } from 'react'
-import Head from 'next/head'
+import React from 'react'
 import { PROFILE } from 'lib/enums'
 import SocialButton from 'components/SocialButton'
 import Button from 'components/Button'
@@ -14,53 +13,39 @@ import {
   Action as ActionStyled,
 } from './styles'
 
-class Home extends PureComponent<any, any> {
-  renderHeader = () => (
-    <Head key="head">
-      <title>{PROFILE.TITLE}</title>
-      <meta name="og:title" content={PROFILE.TITLE} />
-      <meta name="description" content={PROFILE.INTRODUCTION} />
-      <meta name="og:description" content={PROFILE.INTRODUCTION} />
-      <meta itemProp="image" content={PROFILE.IMAGE} />
-      <meta name="og:image" content={PROFILE.IMAGE} />
-    </Head>
+const Home = () => {
+  const socialNetwork = Object.entries(PROFILE.SOCIAL_NETWORKS).map(([type, username]) => (
+    <SocialButton key={type} type={type}>{username}</SocialButton>
+  ))
+
+  const actions = Object.values(PROFILE.ACTIONS).map(({
+    icon, title, href, text,
+  }) => (
+    <Button
+      key={href}
+      icon={icon}
+      title={title}
+      href={href}
+    >
+      {text}
+    </Button>
+  ))
+
+  return (
+    <BackgroundStyled key="content">
+      <InfoStyled>
+        <NameStyled>{PROFILE.NAME}</NameStyled>
+        <SloganStyled>{PROFILE.SLOGAN}</SloganStyled>
+        <DescriptionStyled>{PROFILE.DESCRIPTION}</DescriptionStyled>
+        <SocialNetworkStyled>
+          {socialNetwork}
+        </SocialNetworkStyled>
+        <ActionStyled>
+          {actions}
+        </ActionStyled>
+      </InfoStyled>
+    </BackgroundStyled>
   )
-
-  render() {
-    const Header = this.renderHeader()
-
-    const SocialNetwork = Object.entries(PROFILE.SOCIAL_NETWORKS).map(([type, username]) => (
-      <SocialButton key={type} type={type}>{username}</SocialButton>
-    ))
-
-    const Actions = Object.values(PROFILE.ACTIONS).map(({ icon, title, href, text }) => (
-      <Button
-        key={href}
-        icon={icon}
-        title={title}
-        href={href}
-      >
-        {text}
-      </Button>
-    ))
-
-    return [
-      Header,
-      <BackgroundStyled key="content">
-        <InfoStyled>
-          <NameStyled>{PROFILE.NAME}</NameStyled>
-          <SloganStyled>{PROFILE.SLOGAN}</SloganStyled>
-          <DescriptionStyled>{PROFILE.DESCRIPTION}</DescriptionStyled>
-          <SocialNetworkStyled>
-            {SocialNetwork}
-          </SocialNetworkStyled>
-          <ActionStyled>
-            {Actions}
-          </ActionStyled>
-        </InfoStyled>
-      </BackgroundStyled>,
-    ]
-  }
 }
 
 export default Home
