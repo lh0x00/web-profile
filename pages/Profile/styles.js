@@ -1,5 +1,11 @@
 import styled from 'styled-components'
-import { gradient } from 'styles/animation'
+import {
+  gradient,
+  slideToRight,
+  slideToLeft,
+  slideToBottom,
+  slideToTop,
+} from 'styles/animation'
 import { titleFont, contentFont } from 'styles/fonts'
 
 const boxShadow = '0 1px 9px 1px rgba(0, 0, 0, 0.1)'
@@ -40,6 +46,7 @@ export const InfoCard = styled.div`
   background: #fff;
   border-radius: .3em;
   box-shadow: ${boxShadow};
+  animation: ${slideToRight} 1s ease;
 `
 
 export const AvatarContainer = styled.div`
@@ -82,6 +89,7 @@ export const Name = styled.h1`
   font-size: 3.5em;
   line-height: 1;
   text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.2);
+  animation: ${slideToBottom} 1s ease;
 `
 
 export const Job = styled.h2`
@@ -94,6 +102,7 @@ export const Job = styled.h2`
   font-size: 1.5em;
   line-height: 1;
   text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.2);
+  animation: ${slideToTop} 1s ease;
 `
 
 export const About = styled.div`
@@ -166,6 +175,7 @@ export const Introduction = styled.div`
   border: none;
   border-radius: .3em;
   box-shadow: ${boxShadow};
+  animation: ${slideToLeft} 1s ease;
 `
 
 export const IntroductionHead = styled.h4`
