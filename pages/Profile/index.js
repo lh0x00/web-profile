@@ -115,7 +115,13 @@ class Profile extends Component <PProfile, any> {
     return (
       <ContactStyled>
         <ContactHeadStyled>Contact</ContactHeadStyled>
-        <ContactContentStyled>{listContacts}</ContactContentStyled>
+        <ContactContentStyled>
+          {listContacts}
+          <ContactRowStyled href="/cv">
+            <Icon type="globe" />
+            <ContactTextStyled>lamhieu.info/cv</ContactTextStyled>
+          </ContactRowStyled>
+        </ContactContentStyled>
       </ContactStyled>
     )
   }
