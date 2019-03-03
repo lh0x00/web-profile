@@ -4,6 +4,7 @@ import { PROFILE } from 'lib/enums'
 import { getSocialLink, getSocialIcon } from 'lib/utils'
 
 import Icon from 'components/Icon'
+import withHeader from 'lib/hoc/withHeader'
 
 import {
   Background as BackgroundStyled,
@@ -55,7 +56,11 @@ import {
   CompanyDescription as CompanyDescriptionStyled,
 } from './styles'
 
-class Profile extends Component {
+type PProfile = {
+  header: any,
+}
+
+class Profile extends Component <PProfile, any> {
   renderAvatar = () => (
     <AvatarContainerStyled>
       <AvatarImageStyled src={PROFILE.IMAGE} />
@@ -218,6 +223,8 @@ class Profile extends Component {
   }
 
   render() {
+    const { header } = this.props
+
     const avatar = this.renderAvatar()
     const about = this.renderAbout()
     const socialNetwork = this.renderSocialNetwork()
@@ -230,6 +237,7 @@ class Profile extends Component {
 
     return (
       <BackgroundStyled>
+        {header}
         <CoverStyled />
 
         <ContainerStyled>
@@ -252,4 +260,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+export default withHeader(Profile)

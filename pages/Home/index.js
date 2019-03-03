@@ -3,6 +3,8 @@ import { PROFILE } from 'lib/enums'
 import SocialButton from 'components/SocialButton'
 import Button from 'components/Button'
 
+import withHeader from 'lib/hoc/withHeader'
+
 import {
   Background as BackgroundStyled,
   Info as InfoStyled,
@@ -13,7 +15,7 @@ import {
   Action as ActionStyled,
 } from './styles'
 
-const Home = () => {
+const Home = ({ header }: { header: any }) => {
   const socialNetwork = Object.entries(PROFILE.SOCIAL_NETWORKS).map(([type, username]) => (
     <SocialButton key={type} type={type}>{username}</SocialButton>
   ))
@@ -33,7 +35,8 @@ const Home = () => {
   ))
 
   return (
-    <BackgroundStyled key="content">
+    <BackgroundStyled>
+      {header}
       <InfoStyled>
         <NameStyled>{PROFILE.NAME}</NameStyled>
         <SloganStyled>{PROFILE.SLOGAN}</SloganStyled>
@@ -49,4 +52,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default withHeader(Home)
