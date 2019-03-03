@@ -1,71 +1,14 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { RESPONSIVE_SIZES } from 'lib/enums'
-
-const gradient = keyframes`
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-`
-
-const slideToLeft = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateX(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-`
-
-const slideToTop = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-`
-
-const slideToBottom = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(-50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-`
-
-const scaleIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1, 1.1);
-  }
-}
-`
-
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-`
+import {
+  gradient,
+  slideToLeft,
+  slideToTop,
+  slideToBottom,
+  scaleIn,
+  fadeIn,
+} from 'styles/animation'
+import { titleFont, contentFont } from 'styles/fonts'
 
 export const Background = styled.main`
   position: absolute;
@@ -79,8 +22,8 @@ export const Background = styled.main`
   color: #fff;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
-  animation: ${gradient} 20s ease infinite;
-  font-family: 'Roboto', sans-serif;
+  animation: ${gradient} 15s ease infinite;
+  font-family: ${contentFont};
 `
 
 export const Info = styled.div`
@@ -99,8 +42,8 @@ export const Info = styled.div`
 export const Name = styled.h1`
   margin: 0;
   color: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 100;
+  font-family: ${titleFont};
+  font-weight: 300;
   font-size: 5em;
   line-height: 1;
   animation: ${slideToBottom} 1s ease;
@@ -117,7 +60,7 @@ export const Slogan = styled.h2`
   font-weight: 300;
   font-size: 1em;
   text-transform: uppercase;
-  font-family: 'Roboto Condensed',sans-serif;
+  font-family: ${titleFont};
   animation: ${slideToLeft} 1s ease;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.MOBILE}) {
@@ -129,7 +72,7 @@ export const Description = styled.h3`
   margin: .5em 0;
   padding: 0 5px;
   color: #fff;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 1.75em;
   animation: ${fadeIn} 2s ease;
 
@@ -160,6 +103,9 @@ export const SocialNetwork = styled.div`
   }
 `
 
+export const ViewProfile = styled.a`
+`
+
 export const Action = styled.div`
   display: flex;
   margin-top: 1em;
@@ -177,7 +123,6 @@ export const Action = styled.div`
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     > a {
       margin: 0 .25em;
-      padding: .75em 1.1em .75em .9em;
     }
   }
 `

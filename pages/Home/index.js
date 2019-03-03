@@ -19,13 +19,14 @@ const Home = () => {
   ))
 
   const actions = Object.values(PROFILE.ACTIONS).map(({
-    icon, title, href, text,
+    icon, title, href, text, inSite,
   }) => (
     <Button
       key={href}
       icon={icon}
       title={title}
       href={href}
+      inSite={inSite}
     >
       {text}
     </Button>

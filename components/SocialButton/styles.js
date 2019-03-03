@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { contentFont } from 'styles/fonts'
 
 export const SocialButton = styled.a`
   opacity: 0.7;
@@ -21,5 +22,6 @@ export const ButtonText = styled.span`
   vertical-align: super;
   border-bottom: 1px dotted #fff;
   font-size: 1em;
-  font-weight: 400;
+  font-family: ${contentFont};
+  font-weight: 300;
 `

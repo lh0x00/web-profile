@@ -1,11 +1,19 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { contentFont } from 'styles/fonts'
 
 export const Button = styled.a`
   cursor: pointer;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   padding: .85em 2em .85em 1.8em;
+  ${({ iconOnly }) => iconOnly && css`
+    padding: 0;
+    width: 4em;
+    height: 4em;
+  `}
+  display: flex;
+  border-radius: 90px;
   background: rgba(255, 255, 255, 0.2);
   border: none;
   border-radius: 2em;
@@ -20,12 +28,14 @@ export const Button = styled.a`
     color: #333;
   }
   > i {
-    margin-right: .2em;
     font-size: 1.75em;
   }
 `
 
 export const ButtonText = styled.span`
+  display: inline-block;
+  margin-left: 0.25em;
   font-size: 1em;
-  font-weight: 400;
+  font-family: ${contentFont};
+  font-weight: 300;;
 `
