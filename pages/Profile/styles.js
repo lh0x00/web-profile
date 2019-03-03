@@ -270,19 +270,19 @@ export const ExperienceDescription = styled.div`
   }
 `
 
-export const Skill = styled(Experience)``
+export const Portfolio = styled(Experience)``
 
-export const SkillHead = styled(ExperienceHead)`
+export const PortfolioHead = styled(ExperienceHead)`
   color: #2f7be0;
 `
 
-export const SkillContent = styled(ExperienceContent)``
+export const PortfolioContent = styled(ExperienceContent)``
 
-export const SkillRow = styled(ExperienceRow)``
+export const PortfolioRow = styled(ExperienceRow)``
 
-export const SkillSubHead = styled(ExperienceSubHead)``
+export const PortfolioSubHead = styled(ExperienceSubHead)``
 
-export const SkillDescription = styled(ExperienceDescription)``
+export const PortfolioDescription = styled(ExperienceDescription)``
 
 export const Company = styled(Experience)``
 

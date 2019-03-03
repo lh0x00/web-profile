@@ -42,12 +42,12 @@ import {
   ExperienceRow as ExperienceRowStyled,
   ExperienceSubHead as ExperienceSubHeadStyled,
   ExperienceDescription as ExperienceDescriptionStyled,
-  Skill as SkillStyled,
-  SkillHead as SkillHeadStyled,
-  SkillContent as SkillContentStyled,
-  SkillRow as SkillRowStyled,
-  SkillSubHead as SkillSubHeadStyled,
-  SkillDescription as SkillDescriptionStyled,
+  Portfolio as PortfolioStyled,
+  PortfolioHead as PortfolioHeadStyled,
+  PortfolioContent as PortfolioContentStyled,
+  PortfolioRow as PortfolioRowStyled,
+  PortfolioSubHead as PortfolioSubHeadStyled,
+  PortfolioDescription as PortfolioDescriptionStyled,
   Company as CompanyStyled,
   CompanyHead as CompanyHeadStyled,
   CompanyContent as CompanyContentStyled,
@@ -174,27 +174,27 @@ class Profile extends Component <PProfile, any> {
     )
   }
 
-  renderSkillRow = ([title, source]) => (
-    <SkillRowStyled key={title}>
-      <SkillSubHeadStyled>{title}</SkillSubHeadStyled>
-      <SkillDescriptionStyled>
+  renderPortfolioRow = ([title, source]) => (
+    <PortfolioRowStyled key={title}>
+      <PortfolioSubHeadStyled>{title}</PortfolioSubHeadStyled>
+      <PortfolioDescriptionStyled>
         <Markdown source={source} />
-      </SkillDescriptionStyled>
-    </SkillRowStyled>
+      </PortfolioDescriptionStyled>
+    </PortfolioRowStyled>
   )
 
-  renderSkill = () => {
-    const entriesSkill = Object.entries(PROFILE.DETAIL.SKILL)
-    const listSkills = entriesSkill.map(this.renderSkillRow)
+  renderPortfolio = () => {
+    const entriesPortfolio = Object.entries(PROFILE.DETAIL.SKILL)
+    const listPortfolios = entriesPortfolio.map(this.renderPortfolioRow)
 
     return (
-      <SkillStyled>
-        <SkillHeadStyled>
-          <Icon type="object-ungroup" />
-          Skill and More
-        </SkillHeadStyled>
-        <SkillContentStyled>{listSkills}</SkillContentStyled>
-      </SkillStyled>
+      <PortfolioStyled>
+        <PortfolioHeadStyled>
+          <Icon type="object-group" />
+          Portfolio
+        </PortfolioHeadStyled>
+        <PortfolioContentStyled>{listPortfolios}</PortfolioContentStyled>
+      </PortfolioStyled>
     )
   }
 
@@ -232,7 +232,7 @@ class Profile extends Component <PProfile, any> {
     const info = this.renderInfo()
     const introduction = this.renderIntroduction()
     const experience = this.renderExperience()
-    const skill = this.renderSkill()
+    const skill = this.renderPortfolio()
     const company = this.renderCompany()
 
     return (
