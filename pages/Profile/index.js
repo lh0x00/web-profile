@@ -63,7 +63,7 @@ type PProfile = {
 class Profile extends Component <PProfile, any> {
   renderAvatar = () => (
     <AvatarContainerStyled>
-      <AvatarImageStyled src={PROFILE.IMAGE} />
+      <AvatarImageStyled src={PROFILE.AVATAR} />
     </AvatarContainerStyled>
   )
 
