@@ -36,6 +36,11 @@ export const Container = styled.div`
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     flex-wrap: wrap;
+    width: 75%;
+    min-width: auto;
+  }
+  @media screen and (max-width: ${RESPONSIVE_SIZES.MOBILE}) {
+    flex-wrap: wrap;
     width: 90%;
     min-width: auto;
   }
