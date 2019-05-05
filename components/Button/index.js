@@ -8,18 +8,20 @@ import {
 
 const Button = ({
   href,
+  as,
   icon,
   children,
   inSite,
   ...rest
 }: {
   href: string,
+  as?: string,
   icon?: string,
   inSite?: boolean,
   children: any,
 }) => {
   const otherProps = inSite ? rest : { ...rest, href }
-  const wrapProps = !inSite ? {} : { href }
+  const wrapProps = !inSite ? {} : { as, href }
   const Component = inSite ? Link : Fragment
   const iconElement = icon && (<Icon type={icon} />)
 

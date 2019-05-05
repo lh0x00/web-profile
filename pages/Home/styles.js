@@ -64,6 +64,7 @@ export const Slogan = styled.h2`
   animation: ${slideToLeft} 1s ease;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.MOBILE}) {
+    margin-top: 1em;
     font-size: .9em;
   }
 `

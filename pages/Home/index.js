@@ -20,15 +20,11 @@ const Home = ({ header }: { header: any }) => {
     <SocialButton key={type} type={type}>{username}</SocialButton>
   ))
 
-  const actions = Object.values(PROFILE.ACTIONS).map(({
-    icon, title, href, text, inSite,
-  }) => (
+  const actions = Object.values(PROFILE.ACTIONS).map(({ href, text, ...rest }) => (
     <Button
       key={href}
-      icon={icon}
-      title={title}
       href={href}
-      inSite={inSite}
+      {...rest}
     >
       {text}
     </Button>

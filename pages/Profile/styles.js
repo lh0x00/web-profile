@@ -1,10 +1,7 @@
 import styled from 'styled-components'
+import { RESPONSIVE_SIZES } from 'lib/enums'
 import {
-  gradient,
-  slideToRight,
-  slideToLeft,
-  slideToBottom,
-  slideToTop,
+  gradient, slideToRight, slideToLeft, slideToBottom, slideToTop,
 } from 'styles/animation'
 import { titleFont, contentFont } from 'styles/fonts'
 
@@ -36,6 +33,12 @@ export const Container = styled.div`
   align-items: start;
   min-width: 50em;
   width: 70%;
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    flex-wrap: wrap;
+    width: 90%;
+    min-width: auto;
+  }
 `
 
 export const InfoCard = styled.div`
@@ -44,14 +47,20 @@ export const InfoCard = styled.div`
   padding: 0 0 1em;
   width: 30%;
   background: #fff;
-  border-radius: .3em;
+  border-radius: 0.3em;
   box-shadow: ${boxShadow};
   animation: ${slideToRight} 1s ease;
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    width: 100%;
+  }
 `
 
 export const AvatarContainer = styled.div`
+  position: relative;
   min-height: 14em;
   background: #f5f5f5;
+  font-size: 0;
 `
 
 export const AvatarImage = styled.img`
@@ -68,15 +77,35 @@ export const Content = styled.div`
   > section {
     margin: 1em auto;
     width: 90%;
+
+    @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    width: 100%;
+    font-size: 0.9em;
   }
 `
 
 export const InfoWrapper = styled.section`
-  display: flex;
+  display: ${({ isInMobile }) => (!isInMobile ? 'flex' : 'none')};
   flex-wrap: wrap;
   margin-top: -7em !important;
   height: 100%;
   width: 95% !important;
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    position: absolute;
+    bottom: 0;
+    display: ${({ isInMobile }) => (isInMobile ? 'flex' : 'none')};
+    margin-top: 0 !important;
+    padding: 1em .5em;
+    height: auto;
+    font-size: 16px;
+    background: linear-gradient(0deg, rgb(2, 0, 36) 0%, rgba(0, 0, 0, .7) 0%, transparent 100%);
+  }
 `
 
 export const Name = styled.h1`
@@ -90,6 +119,10 @@ export const Name = styled.h1`
   line-height: 1;
   text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.2);
   animation: ${slideToBottom} 1s ease;
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    font-size: 2.5em;
+  }
 `
 
 export const Job = styled.h2`
@@ -103,6 +136,10 @@ export const Job = styled.h2`
   line-height: 1;
   text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.2);
   animation: ${slideToTop} 1s ease;
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    font-size: 1.2em;
+  }
 `
 
 export const About = styled.div`
@@ -123,7 +160,7 @@ export const AboutContent = styled.div`
   margin-top: 0.75em;
   color: #555;
   font-weight: 300;
-  font-size: .9em;
+  font-size: 0.9em;
   line-height: 1.4em;
   > p {
     margin: 0;
@@ -135,7 +172,6 @@ export const AboutContent = styled.div`
   }
 `
 
-
 export const SocialNetwork = styled(About)``
 
 export const SocialNetworkHead = styled(AboutHead)``
@@ -145,12 +181,12 @@ export const SocialNetworkContent = styled(AboutContent)``
 export const SocialNetworkRow = styled.a`
   display: flex;
   align-items: center;
-  margin: .5em 0;
+  margin: 0.5em 0;
   width: 100%;
   color: #555;
   text-decoration: none;
   > i {
-    margin-right: .2em;
+    margin-right: 0.2em;
     font-size: 2em;
   }
 `
@@ -173,58 +209,73 @@ export const Introduction = styled.div`
   width: 85%;
   background: #fff;
   border: none;
-  border-radius: .3em;
+  border-radius: 0.3em;
   box-shadow: ${boxShadow};
   animation: ${slideToLeft} 1s ease;
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    width: 100%;
+  }
 `
 
 export const IntroductionHead = styled.h4`
   position: relative;
   display: flex;
   align-items: center;
-  margin: 0 0 .75em 0;
+  margin: 0 0 0.75em 0;
   font-family: ${titleFont};
   font-weight: 300;
   font-size: 1.5em;
   color: rgb(0, 137, 123);
   > i {
-    margin-right: .2em;
+    margin-right: 0.2em;
     width: 1em;
     font-size: 2em;
   }
   :after {
-    opacity: .75;
+    opacity: 0.75;
     position: absolute;
     top: 1.6em;
     left: 2.6em;
     display: inline-block;
-    height: .05em;
+    height: 0.05em;
     width: 1em;
-    border-bottom: .075em solid;
+    border-bottom: 0.075em solid;
     content: '';
   }
 `
 
 export const IntroductionContent = styled.div`
-  padding: 0 .5em;
+  padding: 0 0.5em;
 `
 
 export const IntroductionRow = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: .25em 0;
-  padding: .75em;
+  margin: 0.25em 0;
+  padding: 0.75em;
   border: none;
-  border-radius: .3em;
-  font-size: .9em;
+  border-radius: 0.3em;
+  font-size: 0.9em;
   color: #555;
-  :nth-child(2n+1) {
+  :nth-child(2n + 1) {
     background: #f7f7f7;
+  }
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    flex-wrap: wrap;
   }
 `
 
 export const IntroductionLabel = styled.div`
   color: #888;
+
+  @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
+    margin-bottom: 0.4em;
+    width: 100%;
+    font-size: 0.75em;
+    text-transform: uppercase;
+  }
 `
 
 export const IntroductionValue = styled.div`
@@ -244,12 +295,12 @@ export const ExperienceRow = styled.div`
 `
 
 export const ExperienceSubHead = styled.h5`
-  margin: 0 0 .75em 0;
+  margin: 0 0 0.25em 0;
   font-family: ${titleFont};
   font-weight: 300;
   font-size: 1em;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.4;
 `
 
 export const ExperienceDescription = styled.div`

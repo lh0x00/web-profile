@@ -61,11 +61,16 @@ type PProfile = {
 }
 
 class Profile extends Component <PProfile, any> {
-  renderAvatar = () => (
-    <AvatarContainerStyled>
-      <AvatarImageStyled src={PROFILE.AVATAR} />
-    </AvatarContainerStyled>
-  )
+  renderAvatar = () => {
+    const infoInMobile = this.renderInfo(true)
+
+    return (
+      <AvatarContainerStyled>
+        <AvatarImageStyled src={PROFILE.AVATAR} />
+        {infoInMobile}
+      </AvatarContainerStyled>
+    )
+  }
 
   renderAbout = () => (
     <AboutStyled>
@@ -117,17 +122,17 @@ class Profile extends Component <PProfile, any> {
         <ContactHeadStyled>Contact</ContactHeadStyled>
         <ContactContentStyled>
           {listContacts}
-          <ContactRowStyled href="/cv">
+          <ContactRowStyled href="/profile">
             <Icon type="globe" />
-            <ContactTextStyled>lamhieu.info/cv</ContactTextStyled>
+            <ContactTextStyled>lamhieu.info/profile</ContactTextStyled>
           </ContactRowStyled>
         </ContactContentStyled>
       </ContactStyled>
     )
   }
 
-  renderInfo = () => (
-    <InfoWrapperStyled>
+  renderInfo = (isInMobile = false) => (
+    <InfoWrapperStyled isInMobile={isInMobile}>
       <NameStyled>{PROFILE.NAME}</NameStyled>
       <JobStyled>{PROFILE.JOB}</JobStyled>
     </InfoWrapperStyled>
