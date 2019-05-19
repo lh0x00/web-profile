@@ -15,7 +15,7 @@ export const Background = styled.div`
   padding-bottom: 5em;
   width: 100%;
   background: #efefef;
-  color: #222;
+  color: #333;
   font-family: ${contentFont};
   font-weight: 300;
 `
@@ -301,8 +301,9 @@ export const ExperienceRow = styled.div`
 
 export const ExperienceSubHead = styled.h5`
   margin: 0 0 0.25em 0;
+  color: #555;
   font-family: ${titleFont};
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1em;
   text-transform: uppercase;
   line-height: 1.4;
