@@ -54,7 +54,7 @@ export const InfoCard = styled.div`
   background: #fff;
   border-radius: 0.3em;
   box-shadow: ${boxShadow};
-  animation: ${slideToRight} 1s ease;
+  animation: ${slideToRight} .3s ease;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     width: 100%;
@@ -123,7 +123,7 @@ export const Name = styled.h1`
   font-size: 3.5em;
   line-height: 1;
   text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.2);
-  animation: ${slideToBottom} 1s ease;
+  animation: ${slideToBottom} .3s ease;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     font-size: 2.5em;
@@ -140,7 +140,7 @@ export const Job = styled.h2`
   font-size: 1.5em;
   line-height: 1;
   text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.2);
-  animation: ${slideToTop} 1s ease;
+  animation: ${slideToTop} .3s ease;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     font-size: 1.2em;
@@ -216,7 +216,7 @@ export const Introduction = styled.div`
   border: none;
   border-radius: 0.3em;
   box-shadow: ${boxShadow};
-  animation: ${slideToLeft} 1s ease;
+  animation: ${slideToLeft} .3s ease;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     width: 100%;

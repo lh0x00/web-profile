@@ -46,7 +46,7 @@ export const Name = styled.h1`
   font-weight: 300;
   font-size: 5em;
   line-height: 1;
-  animation: ${slideToBottom} 1s ease;
+  animation: ${slideToBottom} .3s ease;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.MOBILE}) {
     font-size: 4em;
@@ -61,7 +61,7 @@ export const Slogan = styled.h2`
   font-size: 1em;
   text-transform: uppercase;
   font-family: ${titleFont};
-  animation: ${slideToLeft} 1s ease;
+  animation: ${slideToLeft} .3s ease;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.MOBILE}) {
     margin-top: 1em;
@@ -85,7 +85,7 @@ export const Description = styled.h3`
 export const SocialNetwork = styled.div`
   > a {
     margin: 0 .5em;
-    animation: ${scaleIn} 1s ease;
+    animation: ${scaleIn} .3s ease;
     &:first-child {
       margin-left: 0
     }
@@ -110,7 +110,7 @@ export const ViewProfile = styled.a`
 export const Action = styled.div`
   display: flex;
   margin-top: 1em;
-  animation: ${slideToTop} 1s ease;
+  animation: ${slideToTop} .3s ease;
   > a {
     margin: 0 .5em;
     &:first-child {
