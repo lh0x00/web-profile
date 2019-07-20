@@ -287,19 +287,19 @@ export const IntroductionValue = styled.div`
   color: #333;
 `
 
-export const Experience = styled(Introduction)``
+export const Technologies = styled(Introduction)``
 
-export const ExperienceHead = styled(IntroductionHead)`
+export const TechnologiesHead = styled(IntroductionHead)`
   color: rgb(244, 81, 30);
 `
 
-export const ExperienceContent = styled(IntroductionContent)``
+export const TechnologiesContent = styled(IntroductionContent)``
 
-export const ExperienceRow = styled.div`
+export const TechnologiesRow = styled.div`
   margin-top: 1.5em;
 `
 
-export const ExperienceSubHead = styled.h5`
+export const TechnologiesSubHead = styled.h5`
   margin: 0 0 0.25em 0;
   color: #555;
   font-family: ${titleFont};
@@ -309,7 +309,7 @@ export const ExperienceSubHead = styled.h5`
   line-height: 1.4;
 `
 
-export const ExperienceDescription = styled.div`
+export const TechnologiesDescription = styled.div`
   line-height: 1.4em;
   > p {
     margin: 0;
@@ -327,30 +327,30 @@ export const ExperienceDescription = styled.div`
   }
 `
 
-export const Skill = styled(Experience)``
+export const Experiences = styled(Technologies)``
 
-export const SkillHead = styled(ExperienceHead)`
+export const ExperiencesHead = styled(TechnologiesHead)`
   color: #2f7be0;
 `
 
-export const SkillContent = styled(ExperienceContent)``
+export const ExperiencesContent = styled(TechnologiesContent)``
 
-export const SkillRow = styled(ExperienceRow)``
+export const ExperiencesRow = styled(TechnologiesRow)``
 
-export const SkillSubHead = styled(ExperienceSubHead)``
+export const ExperiencesSubHead = styled(TechnologiesSubHead)``
 
-export const SkillDescription = styled(ExperienceDescription)``
+export const ExperiencesDescription = styled(TechnologiesDescription)``
 
-export const Company = styled(Experience)``
+export const Company = styled(Technologies)``
 
-export const CompanyHead = styled(ExperienceHead)`
+export const CompanyHead = styled(TechnologiesHead)`
   color: rgb(84, 110, 122);
 `
 
-export const CompanyContent = styled(ExperienceContent)``
+export const CompanyContent = styled(TechnologiesContent)``
 
-export const CompanyRow = styled(ExperienceRow)``
+export const CompanyRow = styled(TechnologiesRow)``
 
-export const CompanySubHead = styled(ExperienceSubHead)``
+export const CompanySubHead = styled(TechnologiesSubHead)``
 
-export const CompanyDescription = styled(ExperienceDescription)``
+export const CompanyDescription = styled(TechnologiesDescription)``

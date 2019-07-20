@@ -36,18 +36,18 @@ import {
   IntroductionRow as IntroductionRowStyled,
   IntroductionLabel as IntroductionLabelStyled,
   IntroductionValue as IntroductionValueStyled,
-  Experience as ExperienceStyled,
-  ExperienceHead as ExperienceHeadStyled,
-  ExperienceContent as ExperienceContentStyled,
-  ExperienceRow as ExperienceRowStyled,
-  ExperienceSubHead as ExperienceSubHeadStyled,
-  ExperienceDescription as ExperienceDescriptionStyled,
-  Skill as SkillStyled,
-  SkillHead as SkillHeadStyled,
-  SkillContent as SkillContentStyled,
-  SkillRow as SkillRowStyled,
-  SkillSubHead as SkillSubHeadStyled,
-  SkillDescription as SkillDescriptionStyled,
+  Technologies as TechnologiesStyled,
+  TechnologiesHead as TechnologiesHeadStyled,
+  TechnologiesContent as TechnologiesContentStyled,
+  TechnologiesRow as TechnologiesRowStyled,
+  TechnologiesSubHead as TechnologiesSubHeadStyled,
+  TechnologiesDescription as TechnologiesDescriptionStyled,
+  Experiences as ExperiencesStyled,
+  ExperiencesHead as ExperiencesHeadStyled,
+  ExperiencesContent as ExperiencesContentStyled,
+  ExperiencesRow as ExperiencesRowStyled,
+  ExperiencesSubHead as ExperiencesSubHeadStyled,
+  ExperiencesDescription as ExperiencesDescriptionStyled,
   Company as CompanyStyled,
   CompanyHead as CompanyHeadStyled,
   CompanyContent as CompanyContentStyled,
@@ -161,51 +161,51 @@ class Profile extends Component <PProfile, any> {
     )
   }
 
-  renderExperienceRow = ([title, source]) => (
-    <ExperienceRowStyled key={title}>
-      <ExperienceSubHeadStyled>{title}</ExperienceSubHeadStyled>
-      <ExperienceDescriptionStyled>
+  renderTechnologiesRow = ([title, source]) => (
+    <TechnologiesRowStyled key={title}>
+      <TechnologiesSubHeadStyled>{title}</TechnologiesSubHeadStyled>
+      <TechnologiesDescriptionStyled>
         <Markdown source={source} />
-      </ExperienceDescriptionStyled>
-    </ExperienceRowStyled>
+      </TechnologiesDescriptionStyled>
+    </TechnologiesRowStyled>
   )
 
-  renderExperience = () => {
-    const entriesExperience = Object.entries(PROFILE.DETAIL.EXPERIENCE)
-    const listExperiences = entriesExperience.map(this.renderExperienceRow)
+  renderTechnologies = () => {
+    const entriesTechnologies = Object.entries(PROFILE.DETAIL.EXPERIENCE)
+    const listTechnologiess = entriesTechnologies.map(this.renderTechnologiesRow)
 
     return (
-      <ExperienceStyled>
-        <ExperienceHeadStyled>
+      <TechnologiesStyled>
+        <TechnologiesHeadStyled>
           <Icon type="object-ungroup" />
-          Experience
-        </ExperienceHeadStyled>
-        <ExperienceContentStyled>{listExperiences}</ExperienceContentStyled>
-      </ExperienceStyled>
+          Technologies
+        </TechnologiesHeadStyled>
+        <TechnologiesContentStyled>{listTechnologiess}</TechnologiesContentStyled>
+      </TechnologiesStyled>
     )
   }
 
-  renderSkillRow = ([title, source]) => (
-    <SkillRowStyled key={title}>
-      <SkillSubHeadStyled>{title}</SkillSubHeadStyled>
-      <SkillDescriptionStyled>
+  renderExperiencesRow = ([title, source]) => (
+    <ExperiencesRowStyled key={title}>
+      <ExperiencesSubHeadStyled>{title}</ExperiencesSubHeadStyled>
+      <ExperiencesDescriptionStyled>
         <Markdown source={source} />
-      </SkillDescriptionStyled>
-    </SkillRowStyled>
+      </ExperiencesDescriptionStyled>
+    </ExperiencesRowStyled>
   )
 
-  renderSkill = () => {
-    const entriesSkill = Object.entries(PROFILE.DETAIL.SKILL)
-    const listSkills = entriesSkill.map(this.renderSkillRow)
+  renderExperiences = () => {
+    const entriesExperiences = Object.entries(PROFILE.DETAIL.SKILL)
+    const listExperiencess = entriesExperiences.map(this.renderExperiencesRow)
 
     return (
-      <SkillStyled>
-        <SkillHeadStyled>
+      <ExperiencesStyled>
+        <ExperiencesHeadStyled>
           <Icon type="object-group" />
-          Skill
-        </SkillHeadStyled>
-        <SkillContentStyled>{listSkills}</SkillContentStyled>
-      </SkillStyled>
+          Experiences
+        </ExperiencesHeadStyled>
+        <ExperiencesContentStyled>{listExperiencess}</ExperiencesContentStyled>
+      </ExperiencesStyled>
     )
   }
 
@@ -242,8 +242,8 @@ class Profile extends Component <PProfile, any> {
     const contact = this.renderContact()
     const info = this.renderInfo()
     const introduction = this.renderIntroduction()
-    const experience = this.renderExperience()
-    const skill = this.renderSkill()
+    const technologies = this.renderTechnologies()
+    const experiences = this.renderExperiences()
     const company = this.renderCompany()
 
     return (
@@ -261,8 +261,8 @@ class Profile extends Component <PProfile, any> {
           <ContentStyled>
             {info}
             {introduction}
-            {experience}
-            {skill}
+            {technologies}
+            {experiences}
             {company}
           </ContentStyled>
         </ContainerStyled>
