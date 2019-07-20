@@ -4,7 +4,12 @@ import { ServerStyleSheet } from 'styled-components'
 import Favicon from 'components/Favicon'
 import { SOURCES } from 'lib/enums'
 
-const globalCss = 'body { font-size: 16px }'
+// eslint-disable-next-line
+const globalCss = 'body { font-size: 16px; font-family: \'Roboto\', Arial, Helvetica, sans-serif !important }'
+
+const styles = SOURCES.STYLES.map(url => (
+  <link key={url} rel="stylesheet" type="text/css" href={url} />
+))
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -34,18 +39,14 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const styles = SOURCES.STYLES.map(url => (
-      <link key={url} rel="stylesheet" type="text/css" href={url} />
-    ))
-
     return (
       <html lang="en" id="app">
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <Favicon />
-          {styles}
           <style>{globalCss}</style>
+          {styles}
         </Head>
         <body>
           <Main />
