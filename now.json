@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "web-profile",
+  "alias": ["lamhieu.info"],
   "routes": [
     {
       "src": "^/sw.js$",
@@ -11,5 +12,9 @@
       }
     }
   ],
-  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "github": {
+    "enabled": true,
+    "autoAlias": true
+  }
 }
