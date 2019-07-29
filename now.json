@@ -4,10 +4,10 @@
   "alias": ["lamhieu.info"],
   "routes": [
     {
-      "src": "^/sw.js$",
+      "src": "/swr.js",
       "dest": "/_next/static/sw.js",
       "headers": {
-        "cache-control": "public, max-age=43200",
+        "cache-control": "max-age=43200",
         "Service-Worker-Allowed": "/"
       }
     }
