@@ -10,6 +10,8 @@ const nextConfig = {
   workboxOpts: {
     skipWaiting: true,
     swDest: 'static/sw.js',
+    globDirectory: '.',
+    globPatterns: ['dist/**/*.{js,png,html,css}'],
     runtimeCaching: [
       {
         urlPattern: /\.(?:png|jpg|jpeg|svg)$/,

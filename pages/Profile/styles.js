@@ -99,14 +99,14 @@ export const InfoWrapper = styled.section`
   flex-wrap: wrap;
   margin-top: -7em !important;
   height: 100%;
-  width: 95% !important;
+  width: 90%;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     position: absolute;
     bottom: 0;
     display: ${({ isInMobile }) => (isInMobile ? 'flex' : 'none')};
     margin-top: 0 !important;
-    padding: 1em .5em;
+    padding: 1em 1em 1.25em;
     height: auto;
     font-size: 16px;
     background: linear-gradient(0deg, rgb(2, 0, 36) 0%, rgba(0, 0, 0, .7) 0%, transparent 100%);
