@@ -184,6 +184,10 @@ export const SocialNetworkRow = styled.a`
   width: 100%;
   color: #555;
   text-decoration: none;
+  transition: color .3s ease;
+  &:hover {
+    color: #1E88E5;
+  }
   > i {
     margin-right: 0.3em;
     font-size: 2em;
@@ -211,7 +215,11 @@ export const Information = styled.div`
   border-radius: 0.3em;
   box-shadow: ${boxShadow};
   animation: ${slideToLeft} .3s ease;
-
+  transition: all .3s ease;
+  &:hover {
+    transform: translate(0, -.5em);
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,0.15);
+  }
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     width: 100%;
   }
