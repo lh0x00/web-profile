@@ -10,8 +10,8 @@ const nextConfig = {
   workboxOpts: {
     skipWaiting: true,
     swDest: 'static/sw.js',
-    globDirectory: '.',
-    globPatterns: ['dist/**/*.{js,png,html,css}'],
+    globDirectory: './dist',
+    globPatterns: ['**/*.{js,png,html,css}'],
     runtimeCaching: [
       {
         urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
@@ -20,6 +20,10 @@ const nextConfig = {
           cacheName: 'images',
           expiration: {
             maxEntries: 100,
+            purgeOnQuotaError: true,
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
       },
@@ -31,6 +35,7 @@ const nextConfig = {
           expiration: {
             maxEntries: 100,
             maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
+            purgeOnQuotaError: true,
           },
           cacheableResponse: {
             statuses: [0, 200],
