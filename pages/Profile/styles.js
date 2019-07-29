@@ -208,7 +208,7 @@ export const ContactText = styled(SocialNetworkText)``
 
 export const Information = styled.div`
   margin: 2em auto 0;
-  padding: 1.3em 1.1em 1.5em;
+  padding: 1.2em 1.1em 1.8em;
   width: 85%;
   background: #fff;
   border: none;
@@ -325,7 +325,7 @@ export const TechnologiesHead = styled(InformationHead)`
 export const TechnologiesContent = styled(InformationContent)``
 
 export const TechnologiesRow = styled.div`
-  margin-top: 1.5em;
+  margin-top: 1.25em;
 `
 
 export const TechnologiesSubHead = styled.h5`

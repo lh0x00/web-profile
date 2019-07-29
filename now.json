@@ -15,6 +15,7 @@
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
   "github": {
     "enabled": true,
-    "autoAlias": true
+    "autoAlias": true,
+    "silent": true
   }
 }
