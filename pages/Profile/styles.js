@@ -90,7 +90,7 @@ export const Content = styled.div`
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     width: 100%;
-    font-size: 0.9em;
+    font-size: 1.1em;
   }
 `
 
@@ -131,7 +131,7 @@ export const Name = styled.h1`
 `
 
 export const Job = styled.h2`
-  margin: 0;
+  margin: .2em 0 0;
   padding-left: 0.1em;
   width: 100%;
   color: #fff;
@@ -147,25 +147,25 @@ export const Job = styled.h2`
   }
 `
 
-export const About = styled.div`
+export const SocialNetwork = styled.div`
   margin-top: 1.75em;
   padding: 0 1em;
 `
 
-export const AboutHead = styled.h3`
+export const SocialNetworkHead = styled.h3`
   margin: 0;
   font-family: ${titleFont};
   font-weight: 300;
-  font-size: 1em;
+  font-size: 1.2em;
   text-transform: uppercase;
   line-height: 1;
 `
 
-export const AboutContent = styled.div`
-  margin-top: 0.75em;
+export const SocialNetworkContent = styled.div`
+  margin-top: 1em;
   color: #555;
   font-weight: 300;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.4em;
   > p {
     margin: 0;
@@ -177,12 +177,6 @@ export const AboutContent = styled.div`
   }
 `
 
-export const SocialNetwork = styled(About)``
-
-export const SocialNetworkHead = styled(AboutHead)``
-
-export const SocialNetworkContent = styled(AboutContent)``
-
 export const SocialNetworkRow = styled.a`
   display: flex;
   align-items: center;
@@ -191,7 +185,7 @@ export const SocialNetworkRow = styled.a`
   color: #555;
   text-decoration: none;
   > i {
-    margin-right: 0.2em;
+    margin-right: 0.3em;
     font-size: 2em;
   }
 `
@@ -208,9 +202,9 @@ export const ContactRow = styled(SocialNetworkRow)``
 
 export const ContactText = styled(SocialNetworkText)``
 
-export const Introduction = styled.div`
+export const Information = styled.div`
   margin: 2em auto 0;
-  padding: 1em;
+  padding: 1.3em 1.1em 1.5em;
   width: 85%;
   background: #fff;
   border: none;
@@ -223,11 +217,12 @@ export const Introduction = styled.div`
   }
 `
 
-export const IntroductionHead = styled.h4`
+export const InformationHead = styled.h4`
   position: relative;
   display: flex;
   align-items: center;
-  margin: 0 0 0.75em 0;
+  margin: 0 0 0.6em 0;
+  padding: 0 .1em;
   font-family: ${titleFont};
   font-weight: 300;
   font-size: 1.5em;
@@ -250,18 +245,18 @@ export const IntroductionHead = styled.h4`
   }
 `
 
-export const IntroductionContent = styled.div`
+export const InformationContent = styled.div`
   padding: 0 0.5em;
 `
 
-export const IntroductionRow = styled.div`
+export const InformationRow = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0.25em 0;
   padding: 0.75em;
   border: none;
   border-radius: 0.3em;
-  font-size: 0.9em;
+  font-size: 1em;
   color: #555;
   :nth-child(2n + 1) {
     background: #f7f7f7;
@@ -272,8 +267,8 @@ export const IntroductionRow = styled.div`
   }
 `
 
-export const IntroductionLabel = styled.div`
-  color: #888;
+export const InformationLabel = styled.div`
+  color: #999;
 
   @media screen and (max-width: ${RESPONSIVE_SIZES.TABLE}) {
     margin-bottom: 0.4em;
@@ -283,33 +278,19 @@ export const IntroductionLabel = styled.div`
   }
 `
 
-export const IntroductionValue = styled.div`
+export const InformationValue = styled.div`
   color: #333;
 `
 
-export const Technologies = styled(Introduction)``
+export const Objective = styled(Information)``
 
-export const TechnologiesHead = styled(IntroductionHead)`
-  color: rgb(244, 81, 30);
+export const ObjectiveHead = styled(InformationHead)`
+  color: rgb(92, 107, 192);
 `
 
-export const TechnologiesContent = styled(IntroductionContent)``
+export const ObjectiveContent = styled(InformationContent)``
 
-export const TechnologiesRow = styled.div`
-  margin-top: 1.5em;
-`
-
-export const TechnologiesSubHead = styled.h5`
-  margin: 0 0 0.25em 0;
-  color: #555;
-  font-family: ${titleFont};
-  font-weight: 400;
-  font-size: 1em;
-  text-transform: uppercase;
-  line-height: 1.4;
-`
-
-export const TechnologiesDescription = styled.div`
+export const ObjectiveDescription = styled.div`
   line-height: 1.4em;
   > p {
     margin: 0;
@@ -327,6 +308,30 @@ export const TechnologiesDescription = styled.div`
   }
 `
 
+export const Technologies = styled(Information)``
+
+export const TechnologiesHead = styled(InformationHead)`
+  color: rgb(244, 81, 30);
+`
+
+export const TechnologiesContent = styled(InformationContent)``
+
+export const TechnologiesRow = styled.div`
+  margin-top: 1.5em;
+`
+
+export const TechnologiesSubHead = styled.h5`
+  margin: 0 0 0.5em 0;
+  color: #555;
+  font-family: ${titleFont};
+  font-weight: 300;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  line-height: 1.4;
+`
+
+export const TechnologiesDescription = styled(ObjectiveDescription)``
+
 export const Experiences = styled(Technologies)``
 
 export const ExperiencesHead = styled(TechnologiesHead)`
@@ -341,16 +346,16 @@ export const ExperiencesSubHead = styled(TechnologiesSubHead)``
 
 export const ExperiencesDescription = styled(TechnologiesDescription)``
 
-export const Company = styled(Technologies)``
+export const Work = styled(Technologies)``
 
-export const CompanyHead = styled(TechnologiesHead)`
+export const WorkHead = styled(TechnologiesHead)`
   color: rgb(84, 110, 122);
 `
 
-export const CompanyContent = styled(TechnologiesContent)``
+export const WorkContent = styled(TechnologiesContent)``
 
-export const CompanyRow = styled(TechnologiesRow)``
+export const WorkRow = styled(TechnologiesRow)``
 
-export const CompanySubHead = styled(TechnologiesSubHead)``
+export const WorkSubHead = styled(TechnologiesSubHead)``
 
-export const CompanyDescription = styled(TechnologiesDescription)``
+export const WorkDescription = styled(TechnologiesDescription)``

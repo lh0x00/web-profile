@@ -17,9 +17,10 @@ import {
   InfoCard as InfoCardStyled,
   AvatarContainer as AvatarContainerStyled,
   AvatarImage as AvatarImageStyled,
-  About as AboutStyled,
-  AboutHead as AboutHeadStyled,
-  AboutContent as AboutContentStyled,
+  Objective as ObjectiveStyled,
+  ObjectiveHead as ObjectiveHeadStyled,
+  ObjectiveContent as ObjectiveContentStyled,
+  ObjectiveDescription as ObjectiveDescriptionStyled,
   SocialNetwork as SocialNetworkStyled,
   SocialNetworkHead as SocialNetworkHeadStyled,
   SocialNetworkContent as SocialNetworkContentStyled,
@@ -30,12 +31,12 @@ import {
   ContactContent as ContactContentStyled,
   ContactRow as ContactRowStyled,
   ContactText as ContactTextStyled,
-  Introduction as IntroductionStyled,
-  IntroductionHead as IntroductionHeadStyled,
-  IntroductionContent as IntroductionContentStyled,
-  IntroductionRow as IntroductionRowStyled,
-  IntroductionLabel as IntroductionLabelStyled,
-  IntroductionValue as IntroductionValueStyled,
+  Information as InformationStyled,
+  InformationHead as InformationHeadStyled,
+  InformationContent as InformationContentStyled,
+  InformationRow as InformationRowStyled,
+  InformationLabel as InformationLabelStyled,
+  InformationValue as InformationValueStyled,
   Technologies as TechnologiesStyled,
   TechnologiesHead as TechnologiesHeadStyled,
   TechnologiesContent as TechnologiesContentStyled,
@@ -48,12 +49,12 @@ import {
   ExperiencesRow as ExperiencesRowStyled,
   ExperiencesSubHead as ExperiencesSubHeadStyled,
   ExperiencesDescription as ExperiencesDescriptionStyled,
-  Company as CompanyStyled,
-  CompanyHead as CompanyHeadStyled,
-  CompanyContent as CompanyContentStyled,
-  CompanyRow as CompanyRowStyled,
-  CompanySubHead as CompanySubHeadStyled,
-  CompanyDescription as CompanyDescriptionStyled,
+  Work as WorkStyled,
+  WorkHead as WorkHeadStyled,
+  WorkContent as WorkContentStyled,
+  WorkRow as WorkRowStyled,
+  WorkSubHead as WorkSubHeadStyled,
+  WorkDescription as WorkDescriptionStyled,
 } from './styles'
 
 type PProfile = {
@@ -62,24 +63,15 @@ type PProfile = {
 
 class Profile extends Component <PProfile, any> {
   renderAvatar = () => {
-    const infoInMobile = this.renderInfo(true)
+    const headInMobile = this.renderHead(true)
 
     return (
       <AvatarContainerStyled>
         <AvatarImageStyled src={PROFILE.AVATAR} />
-        {infoInMobile}
+        {headInMobile}
       </AvatarContainerStyled>
     )
   }
-
-  renderAbout = () => (
-    <AboutStyled>
-      <AboutHeadStyled>About</AboutHeadStyled>
-      <AboutContentStyled>
-        <Markdown source={PROFILE.ABOUT} />
-      </AboutContentStyled>
-    </AboutStyled>
-  )
 
   renderSocialNetworkRow = ([type, username]) => {
     const link = getSocialLink(type, username)
@@ -131,35 +123,49 @@ class Profile extends Component <PProfile, any> {
     )
   }
 
-  renderInfo = (isInMobile = false) => (
+  renderHead = (isInMobile = false) => (
     <InfoWrapperStyled isInMobile={isInMobile}>
       <NameStyled>{PROFILE.NAME}</NameStyled>
       <JobStyled>{PROFILE.JOB}</JobStyled>
     </InfoWrapperStyled>
   )
 
-  renderIntroductionRow = ([label, value]) => (
-    <IntroductionRowStyled key={label}>
-      <IntroductionLabelStyled>{label}</IntroductionLabelStyled>
-      <IntroductionValueStyled>{value}</IntroductionValueStyled>
-    </IntroductionRowStyled>
+  renderInformationRow = ([label, value]) => (
+    <InformationRowStyled key={label}>
+      <InformationLabelStyled>{label}</InformationLabelStyled>
+      <InformationValueStyled>{value}</InformationValueStyled>
+    </InformationRowStyled>
   )
 
-  renderIntroduction = () => {
-    const listIntroductions = Object.entries(PROFILE.DETAIL.INTRODUCTION).map(
-      this.renderIntroductionRow,
+  renderInformation = () => {
+    const listInformations = Object.entries(PROFILE.DETAIL.INFORMATION).map(
+      this.renderInformationRow,
     )
 
     return (
-      <IntroductionStyled>
-        <IntroductionHeadStyled>
+      <InformationStyled>
+        <InformationHeadStyled>
           <Icon type="credit-card" />
-          Introduction
-        </IntroductionHeadStyled>
-        <IntroductionContentStyled>{listIntroductions}</IntroductionContentStyled>
-      </IntroductionStyled>
+          Information
+        </InformationHeadStyled>
+        <InformationContentStyled>{listInformations}</InformationContentStyled>
+      </InformationStyled>
     )
   }
+
+  renderObjective = () => (
+    <ObjectiveStyled>
+      <ObjectiveHeadStyled>
+        <Icon type="question-circle" />
+        About me
+      </ObjectiveHeadStyled>
+      <ObjectiveContentStyled>
+        <ObjectiveDescriptionStyled>
+          <Markdown source={PROFILE.DETAIL.OBJECTIVE} />
+        </ObjectiveDescriptionStyled>
+      </ObjectiveContentStyled>
+    </ObjectiveStyled>
+  )
 
   renderTechnologiesRow = ([title, source]) => (
     <TechnologiesRowStyled key={title}>
@@ -209,27 +215,27 @@ class Profile extends Component <PProfile, any> {
     )
   }
 
-  renderCompanyRow = ([title, source]) => (
-    <CompanyRowStyled key={title}>
-      <CompanySubHeadStyled>{title}</CompanySubHeadStyled>
-      <CompanyDescriptionStyled>
+  renderWorkRow = ([title, source]) => (
+    <WorkRowStyled key={title}>
+      <WorkSubHeadStyled>{title}</WorkSubHeadStyled>
+      <WorkDescriptionStyled>
         <Markdown source={source} />
-      </CompanyDescriptionStyled>
-    </CompanyRowStyled>
+      </WorkDescriptionStyled>
+    </WorkRowStyled>
   )
 
-  renderCompany = () => {
-    const entriesCompany = Object.entries(PROFILE.DETAIL.COMPANY)
-    const listCompanys = entriesCompany.map(this.renderCompanyRow)
+  renderWork = () => {
+    const entriesWork = Object.entries(PROFILE.DETAIL.WORK)
+    const listWorks = entriesWork.map(this.renderWorkRow)
 
     return (
-      <CompanyStyled>
-        <CompanyHeadStyled>
+      <WorkStyled>
+        <WorkHeadStyled>
           <Icon type="suitcase" />
-          Company
-        </CompanyHeadStyled>
-        <CompanyContentStyled>{listCompanys}</CompanyContentStyled>
-      </CompanyStyled>
+          Work
+        </WorkHeadStyled>
+        <WorkContentStyled>{listWorks}</WorkContentStyled>
+      </WorkStyled>
     )
   }
 
@@ -237,14 +243,14 @@ class Profile extends Component <PProfile, any> {
     const { header } = this.props
 
     const avatar = this.renderAvatar()
-    const about = this.renderAbout()
     const socialNetwork = this.renderSocialNetwork()
     const contact = this.renderContact()
-    const info = this.renderInfo()
-    const introduction = this.renderIntroduction()
+    const head = this.renderHead()
+    const information = this.renderInformation()
+    const objective = this.renderObjective()
     const technologies = this.renderTechnologies()
     const experiences = this.renderExperiences()
-    const company = this.renderCompany()
+    const company = this.renderWork()
 
     return (
       <BackgroundStyled>
@@ -254,13 +260,13 @@ class Profile extends Component <PProfile, any> {
         <ContainerStyled>
           <InfoCardStyled>
             {avatar}
-            {about}
             {socialNetwork}
             {contact}
           </InfoCardStyled>
           <ContentStyled>
-            {info}
-            {introduction}
+            {head}
+            {information}
+            {objective}
             {technologies}
             {experiences}
             {company}
