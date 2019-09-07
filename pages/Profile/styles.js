@@ -63,12 +63,12 @@ export const InfoCard = styled.div`
 
 export const AvatarContainer = styled.div`
   position: relative;
-  min-height: 14em;
   background: #f5f5f5;
   font-size: 0;
 `
 
 export const AvatarImage = styled.img`
+  min-height: 14em;
   width: 100%;
 `
 
