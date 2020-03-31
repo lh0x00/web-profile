@@ -12,7 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "next": "^8.0.1",
+    "next": "^9.3.3",
     "next-offline": "^4.0.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
